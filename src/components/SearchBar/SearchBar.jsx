@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import s from './Search.module.css'
+import toast from 'react-hot-toast';
 
 
 const SearchBar = ({ onSubmit }) => {
@@ -9,6 +10,7 @@ const SearchBar = ({ onSubmit }) => {
     const handleSubmit = (e) => {
       e.preventDefault();
       if (searchTerm.trim() === '') {
+        toast.error('Please enter a search term');
         return;
       }
       onSubmit(searchTerm);
@@ -21,8 +23,8 @@ const SearchBar = ({ onSubmit }) => {
           <input
             className={s.searchInput}
             type="text"
-            id="search" // Додаємо id
-            name="search" // Додаємо name
+            id="search"
+            name="search"
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"

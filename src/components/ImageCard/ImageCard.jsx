@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './ImageGalleryItem.module.css'
+import s from './ImageCard.module.css'
 
 const ImageCard = ({ image, onClick }) => {
   return (
